@@ -62,8 +62,13 @@ body {
 .SenderContainer{
   border-radius: 0.5rem;
   background-color: #676767;
-  -webkit-border-radius: 0.5rem;
-  -moz-border-radius: 0.5rem;
-  -ms-border-radius: 0.5rem;
-  -o-border-radius: 0.5rem;
+}
+
+.ButtonContainer{
+  background-color: white;
+  cursor: pointer;
+}
+
+.ButtonContainer-disabled{
+  background-color: #676767;
 }

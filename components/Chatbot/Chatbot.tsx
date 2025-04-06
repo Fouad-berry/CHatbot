@@ -3,12 +3,14 @@
 import { useState } from "react";
 import axios from "axios";
 import '@/app/globals.css';
+import { ArrowUp } from "lucide-react";
 
 export default function ChatBox() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<{ sender: string; text: string }[]>([]);
 
   const sendMessage = async () => {
+    if (!input.trim()) return;
     const userMessage = { sender: "user", text: input };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
@@ -33,7 +35,7 @@ export default function ChatBox() {
           </div>
         ))}
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 items-center">
         <input
           className="flex-1 border rounded p-2 InputContainer"
           placeholder="Poser une question..."
@@ -41,8 +43,15 @@ export default function ChatBox() {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
-        <button className="bg-blue-500 text-white rounded px-4 py-2 SendButton" onClick={sendMessage}>
-          Envoyer
+        <button
+          onClick={sendMessage}
+          disabled={!input.trim()}
+          className={`w-10 h-10 flex items-center justify-center rounded-full transition 
+            ${input.trim() 
+              ? "bg-white hover:bg-white text-black cursor-pointer" 
+              : "bg-gray-600 text-gray-400 cursor-not-allowed"}`}
+        >
+          <ArrowUp size={20} />
         </button>
       </div>
     </div>
