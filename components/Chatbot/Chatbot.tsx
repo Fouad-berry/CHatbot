@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import axios from "axios";
+import '@/app/globals.css';
 
 export default function ChatBox() {
   const [input, setInput] = useState("");
@@ -22,7 +23,7 @@ export default function ChatBox() {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-4 space-y-3">
+    <div className="max-w-xl mx-auto p-4 space-y-3 ChatbotContainer">
       <div className="h-96 overflow-y-auto border rounded-xl p-4">
         {messages.map((msg, i) => (
           <div key={i} className={`mb-2 ${msg.sender === "bot" ? "text-left" : "text-right"}`}>
@@ -34,13 +35,13 @@ export default function ChatBox() {
       </div>
       <div className="flex gap-2">
         <input
-          className="flex-1 border rounded p-2"
+          className="flex-1 border rounded p-2 InputContainer"
           placeholder="Écrire un message..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
-        <button className="bg-blue-500 text-white rounded px-4 py-2" onClick={sendMessage}>
+        <button className="bg-blue-500 text-white rounded px-4 py-2 SendButton" onClick={sendMessage}>
           Envoyer
         </button>
       </div>

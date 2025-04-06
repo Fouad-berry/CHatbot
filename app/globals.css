@@ -24,3 +24,25 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.container{
+  background-color: #171717;
+}
+
+.ChatbotContainer{
+  border: 2px solid white;
+}
+
+.Title{
+  color: white;
+}
+
+.SendButton{
+  cursor: pointer;
+  background-color: gray;
+}
+
+.SendButton:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
