@@ -64,11 +64,3 @@ body {
   background-color: #676767;
 }
 
-.ButtonContainer{
-  background-color: white;
-  cursor: pointer;
-}
-
-.ButtonContainer-disabled{
-  background-color: #676767;
-}
