@@ -29,7 +29,7 @@ export default function ChatBox() {
       <div className="h-96 overflow-y-auto border rounded-xl p-4">
         {messages.map((msg, i) => (
           <div key={i} className={`mb-2 ${msg.sender === "bot" ? "text-left" : "text-right"}`}>
-            <span className={`inline-block p-2 rounded ${msg.sender === "bot" ? "bg-gray-100" : "SenderContainer text-white"}`}>
+            <span className={`inline-block p-2 rounded ${msg.sender === "bot" ? "BotContainer text-white" : "SenderContainer text-white"}`}>
               {msg.text}
             </span>
           </div>
