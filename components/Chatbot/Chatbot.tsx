@@ -27,7 +27,7 @@ export default function ChatBox() {
       <div className="h-96 overflow-y-auto border rounded-xl p-4">
         {messages.map((msg, i) => (
           <div key={i} className={`mb-2 ${msg.sender === "bot" ? "text-left" : "text-right"}`}>
-            <span className={`inline-block p-2 rounded ${msg.sender === "bot" ? "bg-gray-100" : "bg-blue-500 text-white"}`}>
+            <span className={`inline-block p-2 rounded ${msg.sender === "bot" ? "bg-gray-100" : "SenderContainer text-white"}`}>
               {msg.text}
             </span>
           </div>
@@ -36,7 +36,7 @@ export default function ChatBox() {
       <div className="flex gap-2">
         <input
           className="flex-1 border rounded p-2 InputContainer"
-          placeholder="Écrire un message..."
+          placeholder="Poser une question..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
