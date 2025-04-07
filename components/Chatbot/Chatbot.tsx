@@ -37,7 +37,7 @@ export default function ChatBox() {
       </div>
       <div className="flex gap-2 items-center">
         <input
-          className="flex-1 border rounded p-2 InputContainer"
+          className="flex-1 rounded p-2 InputContainer"
           placeholder="Poser une question..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
